@@ -1,0 +1,129 @@
+[gd_scene format=3 uid="uid://dm0y2x8t5gyyy"]
+
+[ext_resource type="Script" path="res://gui/settings_scene.gd" id="1_setgd"]
+[ext_resource type="Texture2D" path="res://assets/gui/menu_bg.jpg" id="2_bg"]
+[ext_resource type="Texture2D" path="res://assets/gui/btn.png" id="3_btn"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_setgd")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bg")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = 40.0
+offset_right = 120.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="BtnPL" type="TextureButton" parent="VBoxContainer"]
+custom_minimum_size = Vector2(240, 70)
+layout_mode = 2
+texture_normal = ExtResource("3_btn")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="VBoxContainer/BtnPL"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.4, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 32
+text = "POLSKI"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BtnEN" type="TextureButton" parent="VBoxContainer"]
+custom_minimum_size = Vector2(240, 70)
+layout_mode = 2
+texture_normal = ExtResource("3_btn")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="VBoxContainer/BtnEN"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.4, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 32
+text = "ENGLISH"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BtnBack" type="TextureButton" parent="VBoxContainer"]
+custom_minimum_size = Vector2(240, 70)
+layout_mode = 2
+texture_normal = ExtResource("3_btn")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="VBoxContainer/BtnBack"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.4, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 32
+text = "BTN_BACK"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TitleLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -160.0
+offset_top = 50.0
+offset_right = 160.0
+offset_bottom = 150.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.9, 0.2, 1)
+theme_override_colors/font_outline_color = Color(0.1, 0.1, 0.1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 36
+text = "LBL_SETTINGS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/BtnPL" to="." method="_on_pl_pressed"]
+[connection signal="pressed" from="VBoxContainer/BtnEN" to="." method="_on_en_pressed"]
+[connection signal="pressed" from="VBoxContainer/BtnBack" to="." method="_on_back_pressed"]

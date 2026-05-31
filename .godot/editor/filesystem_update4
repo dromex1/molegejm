@@ -1,0 +1,5 @@
+res://game_scene.gd
+res://mole_sprite.gd
+res://gui/main_menu.gd
+res://global.gd
+res://gui/settings_scene.gd
